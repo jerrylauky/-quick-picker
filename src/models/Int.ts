@@ -1,10 +1,25 @@
 export default class Int {
-  num: number;
-  typeName: String = "Integer";
+  private val: number;
+  typeName: string = "Integer";
+
   constructor(num: number) {
-    if (Number.isNaN(num)) {
-      throw new TypeError(`This is not of type ${this.typeName}`);
+    this.setValue(num);
+  }
+
+  static validate(inputValue: number) {
+    if (Number.isNaN(inputValue)) {
+      throw new TypeError(
+        `Input value ${inputValue} is not of type ${this.typeName}`
+      );
     }
-    this.num = num;
+  }
+
+  public get value(): number {
+    return this.val;
+  }
+
+  public setValue(num: number): void {
+    Int.validate(num);
+    this.val = num;
   }
 }
