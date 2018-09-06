@@ -1,5 +1,5 @@
-import { binomialCoefficients } from "../libs/utils.tsx";
-import Lottery from "./Lottery";
+import { binomialCoefficients } from "../libs/index";
+import { Lottery } from "./lottery/index";
 
 export default class LotteryOddsCalculator {
   static computeTotalCombinations(lottery: Lottery): number {
@@ -11,7 +11,7 @@ export default class LotteryOddsCalculator {
       lottery.numberField,
       lottery.pickSize
     );
-    const numberOfWaysWinning = 1;
+    const numberOfWaysWinning = 1 * lottery.linesPerTicket.value;
     const numberOfWaysLosing = combinations - 1;
     return numberOfWaysWinning / numberOfWaysLosing;
   }

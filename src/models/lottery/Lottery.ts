@@ -1,11 +1,25 @@
-import Int from "./Int";
-import Lottery from "./Lottery";
-import LotteryOddsCalculator from "./LotteryOddsCalculator";
-import Descriptor from "./Descriptor";
+import Int from "../Int";
+import Descriptor from "../Descriptor";
 
-export default class LottoMax extends Lottery {
-  constructor(calculator: any = LotteryOddsCalculator) {
-    super("Lotto Max", new Int(49), new Int(6), calculator);
+export default class Lottery {
+  type: string;
+  numberField: Int;
+  pickSize: Int;
+  linesPerTicket: Int;
+  calculator: any;
+
+  constructor(
+    type: string,
+    numberField: Int,
+    pickSize: Int,
+    linesPerTicket: Int,
+    calculator: any
+  ) {
+    this.type = type;
+    this.numberField = numberField;
+    this.pickSize = pickSize;
+    this.linesPerTicket = linesPerTicket;
+    this.calculator = calculator;
   }
 
   public getTotalCombinations(): number {
@@ -34,26 +48,23 @@ export default class LottoMax extends Lottery {
         "Number of balls to pick"
       ),
       new Descriptor(
+        "linesPerTicket",
+        this.linesPerTicket.value,
+        "Number of lines per ticket"
+      ),
+      new Descriptor(
         "totalCombinations",
         this.getTotalCombinations(),
         "Total possible combinations"
       ),
       new Descriptor(
         "oddsOfWinningGrandPrize",
-        `1 in ${this.getTotalCombinations()}`,
+        `1 in ${this.getTotalCombinations() / this.linesPerTicket.value}`,
         "Odds of winning the grand prize"
       )
     );
     return descriptorList;
   }
 
-  public toString(): string {
-    return `
-      lottery type: ${this.type},
-      total number of balls: ${this.numberField.value},
-      number of balls to pick: ${this.pickSize.value},
-      total possible combinations: ${this.getTotalCombinations()},
-      odds of winning the grand prize: 1 in ${this.getTotalCombinations()}
-    `;
-  }
+  public toString() {}
 }
