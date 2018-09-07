@@ -1,9 +1,9 @@
 export default class Descriptor {
   private _key: string;
   private _description: string;
-  private _value: any;
+  private _value: string | number;
 
-  constructor (key: string, value: any, description: string) {
+  constructor (key: string, value: string | number, description: string) {
     this.setKey(key);
     this.setValue(value);
     this.setDescription(description);
@@ -13,11 +13,11 @@ export default class Descriptor {
     return this._key;
   }
 
-  public get value ():any {
+  public get value ():string | number {
     return this._value;
   }
 
-  public get description:string {
+  public get description ():string {
     return this._description;
   }
 
@@ -25,7 +25,7 @@ export default class Descriptor {
     this._key = key;
   }
 
-  public setValue(value: any): void {
+  public setValue(value: string | number): void {
     this._value = value;
   }
 

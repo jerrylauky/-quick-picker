@@ -1,10 +1,8 @@
 import * as React from "react";
 import { printObject } from "../libs/index";
+import { Lottery } from "../models/lottery/index";
 
-export default function({ list }) {
-  if (!list || !Array.isArray(list)) {
-    return <div />;
-  }
+export default function({ list }: { list:Lottery[] }) {
   return (
     <div>
       {list.map((lottery, index) => (

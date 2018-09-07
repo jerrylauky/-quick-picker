@@ -9,7 +9,7 @@ const styles = {
 
 const getLotteryInstance = (lotteryType: string) =>
   LotteryFactory.getInstance<Lottery>(lotteryType);
-const getLotteryList = (lotteriesToAnalyze: any[]) =>
+const getLotteryList = (lotteriesToAnalyze: string[]) =>
   lotteriesToAnalyze.map(getLotteryInstance);
 const lotteryList = getLotteryList(["lottoMax", "lottario"]);
 

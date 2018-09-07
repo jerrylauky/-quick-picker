@@ -3,7 +3,7 @@ import Lottery from "./Lottery";
 import LotteryOddsCalculator from "../LotteryOddsCalculator";
 
 export default class Lottario extends Lottery {
-  constructor(calculator: any = LotteryOddsCalculator) {
+  constructor(calculator: LotteryOddsCalculator) {
     super("Lottario", new Int(45), new Int(6), new Int(2), calculator);
   }
 

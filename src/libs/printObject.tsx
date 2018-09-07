@@ -1,8 +1,9 @@
 import * as React from "react";
 import { render } from "react-dom";
 import Descriptor from "../models/Descriptor";
+import { Lottery } from "../models/lottery/index";
 
-export default function printObject(object: any) {
+export default function printObject(object: Lottery) {
   if (
     !object.toDescriptorList ||
     typeof object.toDescriptorList !== "function"

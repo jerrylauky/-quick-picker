@@ -29,8 +29,8 @@ export default class Lottery {
     return this.calculator.computeOddsWinningGrandPrize(this);
   }
 
-  public toDescriptorList(): Array {
-    let descriptorList = [];
+  public toDescriptorList(): Descriptor[] {
+    let descriptorList: Descriptor[] = [];
     descriptorList.push(
       new Descriptor(
         "title",

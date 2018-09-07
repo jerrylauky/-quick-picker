@@ -1,17 +1,17 @@
 export default class Int {
-  private val: number;
   typeName: string = "Integer";
-
-  constructor(num: number) {
-    this.setValue(num);
-  }
+  private val: number;
 
   static validate(inputValue: number) {
     if (Number.isNaN(inputValue)) {
       throw new TypeError(
-        `Input value ${inputValue} is not of type ${this.typeName}`
+        `Input value ${inputValue} is not of type Integer.`
       );
     }
+  }
+
+  constructor(num: number) {
+    this.setValue(num);
   }
 
   public get value(): number {

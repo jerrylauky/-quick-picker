@@ -3,7 +3,7 @@ import Lottery from "./Lottery";
 import LotteryOddsCalculator from "../LotteryOddsCalculator";
 
 export default class LottoMax extends Lottery {
-  constructor(calculator: any = LotteryOddsCalculator) {
+  constructor(calculator: LotteryOddsCalculator) {
     super("Lotto Max", new Int(49), new Int(6), new Int(1), calculator);
   }
 

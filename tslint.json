@@ -13,7 +13,8 @@
             true,
             "check-space"
         ],
-        "curly": true,
+        // "curly": true,
+        "curly": false,
         "eofline": false,
         "forin": true,
         "indent": [ true, "spaces" ],
@@ -21,15 +22,18 @@
         "jsdoc-format": true,
         "jsx-no-lambda": false,
         "jsx-no-multiline-js": false,
+        // "jsx-self-close": true,
+        "jsx-self-close": false,
         "label-position": true,
-        "max-line-length": [ true, 120 ],
+        // "max-line-length": [ true, 120 ],
         "member-ordering": [
             true,
             "public-before-private",
             "static-before-instance",
             "variables-before-functions"
         ],
-        "no-any": true,
+        // "no-any": true,
+        "no-any": false,
         "no-arg": true,
         "no-bitwise": true,
         "no-console": [
@@ -46,7 +50,8 @@
         "no-construct": true,
         "no-debugger": true,
         "no-duplicate-variable": true,
-        "no-empty": true,
+        // "no-empty": true,
+        "no-empty": false,
         "no-eval": true,
         "no-shadowed-variable": true,
         "no-string-literal": true,
@@ -61,7 +66,7 @@
             "check-open-brace",
             "check-whitespace"
         ],
-        "quotemark": [true, "single", "jsx-double"],
+        // "quotemark": [true, "single", "jsx-double"],
         "radix": true,
         "semicolon": [true, "always"],
         "switch-default": true,
@@ -84,16 +89,16 @@
                 "variable-declaration": "nospace"
             }
         ],
-        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
-        "whitespace": [
-            true,
-            "check-branch",
-            "check-decl",
-            "check-module",
-            "check-operator",
-            "check-separator",
-            "check-type",
-            "check-typecast"
-        ]
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"]
+        // "whitespace": [
+        //     true,
+        //     "check-branch",
+        //     "check-decl",
+        //     "check-module",
+        //     "check-operator",
+        //     "check-separator",
+        //     "check-type",
+        //     "check-typecast"
+        // ]
     }
 }
