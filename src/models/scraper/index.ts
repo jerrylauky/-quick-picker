@@ -1,3 +1,4 @@
 import ScraperInfoRetrievers from "./ScraperInfoRetrievers";
+import ScraperInfo from "./ScraperInfo";
 
-export { ScraperInfoRetrievers };
+export { ScraperInfoRetrievers, ScraperInfo };

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import Descriptor from "../models/Descriptor";
-import { Lottery } from "../models/lottery/index";
+import { Lottery } from "../models/lottery";
 
 export default function printObject(object: Lottery) {
   if (

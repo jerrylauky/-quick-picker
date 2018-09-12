@@ -4,7 +4,17 @@ import LotteryOddsCalculator from "../LotteryOddsCalculator";
 
 export default class LottoMax extends Lottery {
   constructor(calculator: LotteryOddsCalculator = LotteryOddsCalculator) {
-    super("Lotto Max", new Int(49), new Int(6), new Int(1), calculator);
+    let numberField = new Int(49);
+    let pickSize = new Int(6);
+    let linesPerTicket = new Int(1); 
+    let firstDrawDate = 1253854800000;
+    let drawFrequency = "weekly";
+    let drawDayOfWeek = "Friday"; 
+    
+    super(
+      "Lottario", numberField, pickSize, linesPerTicket, 
+      firstDrawDate, drawFrequency, drawDayOfWeek, calculator
+    );
   }
 
   public getTotalCombinations(): number {

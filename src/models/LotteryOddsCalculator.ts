@@ -1,5 +1,5 @@
-import { binomialCoefficients } from "../libs/index";
-import { Lottery } from "./lottery/index";
+import { binomialCoefficients } from "../libs";
+import { Lottery } from "./lottery";
 
 export default class LotteryOddsCalculator {
   static computeTotalCombinations(lottery: Lottery): number {

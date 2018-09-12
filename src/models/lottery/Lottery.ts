@@ -1,25 +1,48 @@
 import Int from "../Int";
 import Descriptor from "../Descriptor";
+import { getDayBeforeToday, addWeeks, Validator } from "../../libs";
 
 export default class Lottery {
   type: string;
   numberField: Int;
   pickSize: Int;
   linesPerTicket: Int;
+  firstDrawDate: number;
+  drawFrequency: string;
+  drawDayOfWeek: string;
   calculator: any;
 
   constructor(
-    type: string,
-    numberField: Int,
-    pickSize: Int,
-    linesPerTicket: Int,
+    type: string, numberField: Int, pickSize: Int, linesPerTicket: Int, 
+    firstDrawDate: number, drawFrequency: string, drawDayOfWeek: string, 
     calculator: any
   ) {
+    Validator.isTimestamp(firstDrawDate);
+
     this.type = type;
     this.numberField = numberField;
     this.pickSize = pickSize;
     this.linesPerTicket = linesPerTicket;
+    this.firstDrawDate = firstDrawDate;
+    this.drawFrequency = drawFrequency;
+    this.drawDayOfWeek = drawDayOfWeek;
     this.calculator = calculator;
+  }
+
+  public getFirstDrawDate (): number {
+    return this.firstDrawDate;
+  }
+
+  public getPrevDrawDate (drawDate: number): number {
+    return addWeeks(drawDate, -1);
+  }
+
+  public getNextDrawDate (drawDate: number): number {
+    return addWeeks(drawDate, 1);
+  }
+
+  public getLastDrawDate (): number | undefined {
+    return getDayBeforeToday(this.drawDayOfWeek);
   }
 
   public getTotalCombinations(): number {

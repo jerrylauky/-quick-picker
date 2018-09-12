@@ -1,5 +1,6 @@
-import factorial from "./factorial";
-import binomialCoefficients from "./binomialCoefficients";
-import printObject from "./printObject.tsx";
-
-export { factorial, binomialCoefficients, printObject };
+export * from "./math";
+export * from "./utils";
+export * from "./date";
+export * from "./dom";
+import Validator from "./validator";
+export { Validator };

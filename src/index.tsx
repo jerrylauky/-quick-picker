@@ -1,6 +1,6 @@
 import * as React from "react";
 import { render } from "react-dom";
-import { Lottery, LotteryFactory } from "./models/lottery/index";
+import { Lottery, LotteryFactory } from "./models/lottery";
 
 const styles = {
   fontFamily: "sans-serif",
